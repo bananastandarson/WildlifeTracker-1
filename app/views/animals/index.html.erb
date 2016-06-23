@@ -12,7 +12,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="animal_list">
     <% @animals.each do |animal| %>
       <tr>
         <td><%= animal.name %></td>
@@ -29,3 +29,35 @@
 <br>
 
 <%= link_to 'New Animal', new_animal_path %>
+
+<br>
+
+<p>
+
+  <label for="animal_name">Name</label><br>
+  <input type="text" name="animal[name]" id="animal_name" /><br>
+
+  <label for="animal_latin_name">Latin name</label><br>
+  <input type="text" name="animal[latin_name]" id="animal_latin_name" /><br>
+
+  <label for="animal_kingdom">Kingdom</label><br>
+  <input type="text" name="animal[kingdom]" id="animal_kingdom" /><br>
+  <button type="button" id="add_new_animal_button">Add New Animal</button>
+</p>
+
+
+<!-- <form id="new_animal">
+  <div class="field">
+    <label for="animal_name">Name</label><br>
+    <input type="text" name="animal[name]" id="animal_name" />
+  </div>
+  <div class="field">
+    <label for="animal_latin_name">Latin name</label><br>
+    <input type="text" name="animal[latin_name]" id="animal_latin_name" />
+  </div>
+  <div class="field">
+    <label for="animal_kingdom">Kingdom</label><br>
+    <input type="text" name="animal[kingdom]" id="animal_kingdom" />
+  </div>
+    <input id="submit_animal" type="button" value="Create Animal" />
+</form> -->
