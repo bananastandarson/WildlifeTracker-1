@@ -28,8 +28,8 @@ $("document").ready(function() {
 
   // Function to be called after data has been successfully submitted
   function add_to_animal_list(data) {
-    alert(JSON.stringify(data));
-    alert("Animal added");
+    // alert(JSON.stringify(data));
+    // alert("Animal added");
     $("#animal_list").append(
       '<tr><td>' + $("#animal_name").val() + '</td><td>' +
       $("#animal_latin_name").val() + '</td><td>' +

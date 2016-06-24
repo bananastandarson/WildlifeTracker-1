@@ -68,6 +68,26 @@ class SightingsController < ApplicationController
     end
   end
 
+  def get_sightings
+    @sightings = Sighting.all
+    sightings = []
+    @sightings.each do |sighting|
+      sightings << {
+        id: sighting.id,
+        title: sighting.animal.name,
+        start: convert_datetime(sighting),
+        url: Rails.application.routes.url_helpers.sighting_path(sighting.id)
+      }
+    end
+    render :json => sightings.to_json
+  end
+
+  def convert_datetime(sighting)
+    date = sighting.date
+    time = sighting.time
+    sighting_datetime = DateTime.new(date.year, date.month, date.day, time.hour, time.min, time.sec, time.zone)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def regions_for_select

@@ -19,7 +19,7 @@
     <% @sightings.each do |sighting| %>
       <tr>
         <td><%= sighting.date %></td>
-        <td><%= sighting.time %></td>
+        <td><%= sighting.time.strftime('%I:%M') %></td>
         <td><%= sighting.latitude %></td>
         <td><%= sighting.longitude %></td>
         <td>
@@ -43,3 +43,5 @@
 <br>
 
 <%= link_to 'New Sighting', new_sighting_path %>
+
+<div id="calendar"></div>
